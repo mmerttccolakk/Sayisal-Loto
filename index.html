@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sayısal Loto - Rasgele</title>
+<META NAME="TITLE" CONTENT="Sayısal Loto - Rasgele">
+<META NAME="DESCRIPTION" CONTENT="Sayısal loto için sayı sallayıcı site bırakın makina sallasın.">
+<META NAME="KEYWORDS" CONTENT="sayısal loto sayı sallayıcı,sayısal loto sayı üretme sitesi,sayısal loto sayı salla,">
+<META NAME="OWNER" CONTENT="conficker94@gmail.com">
+<META NAME="AUTHOR" CONTENT="Mert Çolak">
+<META HTTP-EQUIV="CONTENT-LANGUAGE" CONTENT="tr">
+<META NAME="ROBOTS" CONTENT="index,follow">
+<link href="genel.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#form").bind("submit", function(){
+			
+			$("#sonuclar").empty();
+			$(this).attr("target","gelenBilgi");
+			$("<img />").attr("src","img/bekle.gif").appendTo($("#sonuclar"));
+			
+			$("#gelenBilgi").bind("load", function(){
+				
+				var deger = $("#gelenBilgi").contents().find("body").html();
+				$("#sonuclar").html(deger);
+			});
+			
+		});
+});
+</script>
+</head>
+
+<body>
+<center><img src="img/banner.png" alt="banner" border="0"/></center>
+<div id="panel">
+  <div id="menu">
+   	<table border="0" cellpadding="0" cellspacing="0" style="margin-top:0px; margin-left:-20px;">
+        	<tr>
+           	  <td width="50"><a href="index.html" class="menu">Rasgele</a></td>
+              <td width="50"><a href="hakkimda.html" class="menu">Hakkında</a></td>
+                <td width="50"><a href="iletisim.html" class="menu">İletişim</a></td>
+      </tr>
+      </table>
+    </div>
+    <div id="icerik">
+    <center><p>"Rasgele" Buton"una basarak sayısal loto için 6 tane sayı üretin.Bu site sayısal logo için otomatik sayı üretmenizi sağlar.<br />
+<form action="islem.php" method="post" enctype="multipart/form-data" id="form"><button class="orange" type="submit" id="yuklebuton">Rasgele</button></form><br /></p></center>
+    </div>
+    <iframe id="gelenBilgi" name="gelenBilgi" src="" style="display: none"></iframe>
+	<div id="sonuclar" align="center"></div>
+</div>
+<center><span id="copy">&copy; 2011-2012 | Mert Çolak</span></center>
+</body>
+</html>
